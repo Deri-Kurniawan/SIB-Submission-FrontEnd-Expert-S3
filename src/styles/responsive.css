@@ -1,0 +1,89 @@
+/*
+  Navbar
+*/
+
+@media only screen and (max-width: 870px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  app-bar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-logo {
+    width: 100%;
+    margin-left: .5em;
+  }
+
+  .nav-menu {
+    display: none;
+    padding: 0;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .nav-menu .menu-item {
+    padding: 1em;
+    font-size: 1.3em;
+  }
+
+  #menu-toggle {
+    visibility: visible;
+  }
+}
+
+@media screen and (min-width: 870px) {
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+  }
+}
+
+/*
+  Restaurant List
+*/
+
+@media screen and (min-width: 775px) {
+
+  .restaurant-list,
+  .favorite-restaurant {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .restaurant-list,
+  .favorite-restaurant {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .hero,
+  main {
+    margin: auto;
+    min-width: 1000px;
+    max-width: 1200px;
+  }
+}
+
+/*
+  Customer Reviews
+*/
+
+@media screen and (min-width: 615px) {
+  .customer-reviews {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 970px) {
+  .customer-reviews {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
