@@ -1,9 +1,9 @@
-import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 import { createFavoriteButtonTemplate, createFavoritedButtonTemplate } from '../views/templates/template-creator';
 
-const FavoriteButtonInitiator = {
-  async init({ favoriteButtonContainer, restaurant }) {
+const FavoriteButtonPresenter = {
+  async init({ favoriteButtonContainer, favoriteRestaurant, restaurant }) {
     this._favoriteButtonContainer = favoriteButtonContainer;
+    this._favoriteRestaurant = favoriteRestaurant;
     this._restaurant = restaurant;
 
     await this._renderButton();
@@ -11,15 +11,15 @@ const FavoriteButtonInitiator = {
 
   async _renderButton() {
     const { id } = this._restaurant;
-    if (this._isRestaurantExist(id)) {
-      this._renderFavorited();
+    if (await this._isRestaurantExist(id)) {
+      this._renderUnFavorited();
     } else {
       this._renderFavorite();
     }
   },
 
   async _isRestaurantExist(id) {
-    const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
+    const restaurant = await this._favoriteRestaurant.getRestaurant(id);
     return !!restaurant;
   },
 
@@ -28,20 +28,20 @@ const FavoriteButtonInitiator = {
     const favoriteButton = document.querySelector('#favoriteButton');
 
     favoriteButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
+      await this._favoriteRestaurant.putRestaurant(this._restaurant);
       this._renderButton();
     });
   },
 
-  async _renderFavorited() {
+  async _renderUnFavorited() {
     this._favoriteButtonContainer.innerHTML = createFavoritedButtonTemplate();
     const favoriteButton = document.querySelector('#favoriteButton');
 
     favoriteButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
+      await this._favoriteRestaurant.deleteRestaurant(this._restaurant.id);
       this._renderButton();
     });
   },
 };
 
-export default FavoriteButtonInitiator;
+export default FavoriteButtonPresenter;
