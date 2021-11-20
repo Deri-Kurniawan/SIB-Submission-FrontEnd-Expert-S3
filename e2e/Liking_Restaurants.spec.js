@@ -22,6 +22,7 @@ Scenario('favoriting one restaurant', async ({ I }) => {
   I.click('#favoriteButton');
 
   I.amOnPage('/#/favorite');
+  I.dontSeeElementInDOM('error-message');
   I.seeElement('.restaurant-item');
   const favoritedRestaurantTitle = await I.grabTextFrom('.restaurant-item .card-title');
 
