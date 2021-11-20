@@ -12,8 +12,14 @@
         "sourceType": "module"
     },
     "rules": {
+        "consistent-return": "off",
+        "func-names": ["error", "never"],
+        "import/prefer-default-export": "off",
         "import/no-cycle": "off",
         "linebreak-style": 0,
+        "no-prototype-builtins": "off",
+        "no-return-assign": "off",
+        "no-undef": "off",
         "no-alert":"off",
         "no-console":"off",
         "no-restricted-globals": "off",
@@ -23,7 +29,6 @@
               "array": false,
               "object": true
             }
-        }],
-        "func-names": ["error", "never"]
+        }]
     }
 }

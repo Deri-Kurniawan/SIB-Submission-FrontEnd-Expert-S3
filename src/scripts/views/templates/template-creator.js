@@ -85,7 +85,7 @@ const createFavoritedButtonTemplate = () => `
 
 const createCustomerReviewTemplate = (customerReview) => `
   <div class="customer-review-item" tabindex="0" aria-label="${customerReview.name} memberikan review pada ${customerReview.date}. Dan pesan reviewnya adalah ${customerReview.review}.">
-    <span>${customerReview.name} - ${customerReview.date}</span>
+    <span class="reviewer-name">${customerReview.name}</span> - <i>${customerReview.date}</i>
     <p>${customerReview.review}</p>
   </div>
 `;

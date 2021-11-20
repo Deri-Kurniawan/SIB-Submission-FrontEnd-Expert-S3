@@ -1,7 +1,3 @@
-/* eslint-disable no-prototype-builtins */
-/* eslint-disable consistent-return */
-/* eslint-disable no-return-assign */
-/* eslint-disable no-undef */
 import { itActsAsFavoriteRestaurantModel } from './contract/favoriteRestaurantContract';
 
 let favoriteRestaurants = [];
@@ -25,7 +21,6 @@ const FavoriteRestaurantArray = {
       return;
     }
 
-    // pastikan id ini belum ada dalam daftar favoriteRestaurants
     if (this.getRestaurant(restaurant.id)) {
       return;
     }
@@ -34,8 +29,6 @@ const FavoriteRestaurantArray = {
   },
 
   deleteRestaurant(id) {
-    // cara boros menghapus film dengan meng-copy film yang ada
-    // kecuali film dengan id == id
     favoriteRestaurants = favoriteRestaurants.filter((restaurant) => restaurant.id !== id);
   },
 };

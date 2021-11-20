@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-undef */
 const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
   it('should return the Restaurant that has been added', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
@@ -20,7 +18,7 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
       .toEqual([]);
   });
 
-  it('can return all of the Restaurants that have been added', async () => {
+  it('should return all of the Restaurants that have been added', async () => {
     favoriteRestaurant.putRestaurant({ id: 1 });
     favoriteRestaurant.putRestaurant({ id: 2 });
 
