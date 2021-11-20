@@ -23,7 +23,7 @@ Scenario('favoriting one restaurant', async ({ I }) => {
 
   I.amOnPage('/#/favorite');
   I.seeElement('.restaurant-item');
-  const favoritedRestaurantTitle = await I.grabTextFrom('.card-title');
+  const favoritedRestaurantTitle = await I.grabTextFrom('.restaurant-item .card-title');
 
   assert.strictEqual(firstRestaurantTitle, favoritedRestaurantTitle);
 });
