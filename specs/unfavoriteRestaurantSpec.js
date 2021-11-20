@@ -15,14 +15,14 @@ describe('remove favorite from restaurant', () => {
     await FavoriteRestaurantIdb.deleteRestaurant(1);
   });
 
-  it('should display unfavorite widget when the restaurant has been favorited', async () => {
+  it('should display favorited button when the restaurant has been favorited', async () => {
     await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
     expect(document.querySelector('[aria-label="remove this restaurant as not favorite"]'))
       .toBeTruthy();
   });
 
-  it('should not display favorite widget when the restaurant has been favorited', async () => {
+  it('should not display favorite button when the restaurant has been favorited', async () => {
     await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
     expect(document.querySelector('[aria-label="mark this restaurant as favorite"]'))
