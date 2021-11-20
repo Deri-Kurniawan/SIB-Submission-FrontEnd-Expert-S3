@@ -28,3 +28,19 @@ Scenario('favoriting one restaurant', async ({ I }) => {
 
   assert.strictEqual(firstRestaurantTitle, favoritedRestaurantTitle);
 });
+
+Scenario('adding and removing favorite restaurant', ({ I }) => {
+  I.amOnPage('/');
+  I.seeElement('.restaurant-item .card-title a.card-link');
+  I.click(locate('.restaurant-item .card-title a.card-link').first());
+  I.seeElement('#favoriteButton');
+  I.click('#favoriteButton');
+
+  I.amOnPage('/#/favorites');
+
+  I.seeElement('#favoriteButton');
+  I.click('#favoriteButton');
+
+  I.amOnPage('/#/favorites');
+  I.dontSeeElementInDOM('error-message');
+});
