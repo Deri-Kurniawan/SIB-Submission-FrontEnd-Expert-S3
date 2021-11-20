@@ -3,7 +3,15 @@ import DetailHelper from '../../utils/detail-helper';
 
 const createRestaurantItemTemplate = (restaurant) => `
 <div class="restaurant-item card" tabindex="0">
-    <img class="card-image" src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}" alt="${restaurant.name} restaurant image."/>
+    <picture class="card-image" tabindex="0">
+      <source media="(max-width: 600px)" srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" type="image/jpeg">
+      <source media="(max-width: 900px)" srcset="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" type="image/jpeg">
+      <img class="card-image"
+        srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)} 480w, ${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)} 800w"
+        sizes="(max-width: 600px) 480px, 800px"
+        src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}"
+        alt="${restaurant.name} restaurant image.">
+    </picture>
     <div class="card-body">
         <div class="icons">
             <span aria-label="Rating ${restaurant.rating}."><i class="rating-icon fas fa-star fa-fw"></i> ${restaurant.rating}</span>
@@ -19,7 +27,15 @@ const createRestaurantItemTemplate = (restaurant) => `
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <div class="card-detail">
-    <img class="card-detail-image" src="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" aria-label="${restaurant.name} restaurant image." tabindex="0"/>
+  <picture aria-label="${restaurant.name} restaurant image." tabindex="0">
+    <source media="(max-width: 600px)" srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" type="image/jpeg">
+    <source media="(max-width: 900px)" srcset="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" type="image/jpeg">
+    <img class="card-detail-image"
+      srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)} 480w, ${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)} 800w"
+      sizes="(max-width: 600px) 480px, 800px"
+      src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}"
+      alt="${restaurant.name} restaurant image.">
+  </picture>
 
     <table>
       <tr tabindex="0">
