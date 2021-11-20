@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
 import * as TestFactories from './helpers/testFactories';
 
@@ -41,10 +40,8 @@ describe('remove favorite from restaurant', () => {
   it('should not throw error if the unfavorited restaurant is not in the list', async () => {
     await TestFactories.createFavoriteButtonPresenterWithRestaurant({ id: 1 });
 
-    // hapus dulu restaurant dari daftar restaurant yang disukai
     await FavoriteRestaurantIdb.deleteRestaurant(1);
 
-    // kemudian, simulasikan pengguna menekan widget batal menyukai restaurant
     document.querySelector('[aria-label="remove this restaurant as not favorite"]').dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurantIdb.getRestaurants()).toEqual([]);
