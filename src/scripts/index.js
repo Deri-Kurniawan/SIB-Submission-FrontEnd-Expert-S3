@@ -10,6 +10,9 @@ import './components/skip-to-content';
 import './components/footer-copyright';
 import './components/page-loader';
 
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import App from './views/app';
 import swRegister from './utils/sw-register';
 

@@ -6,7 +6,7 @@ const createRestaurantItemTemplate = (restaurant) => `
     <picture class="card-image" tabindex="0">
       <source media="(max-width: 600px)" srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" type="image/jpeg">
       <source media="(max-width: 900px)" srcset="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" type="image/jpeg">
-      <img class="card-image" src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}" alt="${restaurant.name} restaurant image.">
+      <img class="card-image lazyload" data-src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}" alt="${restaurant.name} restaurant image.">
     </picture>
     <div class="card-body">
         <div class="icons">
@@ -26,7 +26,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <picture aria-label="${restaurant.name} restaurant image." tabindex="0">
     <source media="(max-width: 600px)" srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" type="image/jpeg">
     <source media="(max-width: 800px)" srcset="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" type="image/jpeg">
-    <img class="card-detail-image" src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}" alt="${restaurant.name} restaurant image.">
+    <img class="card-detail-image lazyload" data-src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}" alt="${restaurant.name} restaurant image.">
   </picture>
 
     <table>

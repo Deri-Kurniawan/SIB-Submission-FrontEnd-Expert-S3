@@ -147,6 +147,17 @@ app-bar .brand-logo {
   -ms-border-radius: 50px;
 }
 
+/*
+  Picture Size For
+  Minimize Layout Shift
+*/
+
+picture {
+  display: block;
+  height: 18em;
+  width: 100%;
+}
+
 .card img.card-image {
   background-repeat: no-repeat;
   background-size: cover;
