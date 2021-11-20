@@ -1,5 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import '@fortawesome/fontawesome-free/js/all';
+import '@fortawesome/fontawesome-free/js/all.min';
 import '../styles/main.css';
 import '../styles/responsive.css';
 
@@ -9,6 +9,9 @@ import './components/error-message';
 import './components/skip-to-content';
 import './components/footer-copyright';
 import './components/page-loader';
+
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import App from './views/app';
 import swRegister from './utils/sw-register';
@@ -35,7 +38,7 @@ const pageLoaderAfter = () => {
     document.querySelector('page-loader div').classList.remove('loader');
     document.body.style.opacity = '1';
     clearTimeout(loadingTimeout);
-  }, 1000);
+  }, 100);
 };
 
 window.addEventListener('hashchange', () => {
