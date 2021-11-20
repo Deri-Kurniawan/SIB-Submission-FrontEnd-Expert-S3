@@ -152,7 +152,7 @@ app-bar .brand-logo {
   Minimize Layout Shift
 */
 
-picture {
+picture.card-image {
   display: block;
   height: 18em;
   width: 100%;
