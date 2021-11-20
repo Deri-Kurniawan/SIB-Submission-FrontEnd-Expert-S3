@@ -35,7 +35,7 @@ const pageLoaderAfter = () => {
     document.querySelector('page-loader div').classList.remove('loader');
     document.body.style.opacity = '1';
     clearTimeout(loadingTimeout);
-  }, 1000);
+  }, 250);
 };
 
 window.addEventListener('hashchange', () => {
