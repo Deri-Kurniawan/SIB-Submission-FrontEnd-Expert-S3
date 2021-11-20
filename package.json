@@ -44,6 +44,8 @@
     "font-awesome-loader": "^1.0.2",
     "html-webpack-plugin": "^4.3.0",
     "idb": "^6.1.5",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
     "regenerator-runtime": "^0.13.5",
     "serviceworker-webpack-plugin": "^1.0.1",
     "webpack-merge": "^5.0.9",
