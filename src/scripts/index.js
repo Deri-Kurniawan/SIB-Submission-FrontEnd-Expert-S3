@@ -1,5 +1,5 @@
 import 'regenerator-runtime'; /* for async await transpile */
-import '@fortawesome/fontawesome-free/js/all';
+import '@fortawesome/fontawesome-free/js/all.min';
 import '../styles/main.css';
 import '../styles/responsive.css';
 
