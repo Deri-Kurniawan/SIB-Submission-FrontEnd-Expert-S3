@@ -22,12 +22,8 @@ const createRestaurantItemTemplate = (restaurant) => `
 `;
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <div class="card-detail">
-  <picture aria-label="${restaurant.name} restaurant image." tabindex="0">
-    <source media="(max-width: 600px)" srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" type="image/jpeg">
-    <source media="(max-width: 800px)" srcset="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" type="image/jpeg">
-    <img class="card-detail-image lazyload" data-src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}" alt="${restaurant.name} restaurant image.">
-  </picture>
+<div class="card-detail">
+  <img class="card-detail-image lazyload" data-src="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" alt="${restaurant.name} restaurant image.">
 
     <table>
       <tr tabindex="0">
