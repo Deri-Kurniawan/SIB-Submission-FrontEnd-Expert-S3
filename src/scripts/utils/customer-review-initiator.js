@@ -45,7 +45,7 @@ const CustomerReviewInitiator = {
         name,
         review,
         date: `
-        ${date.getDay()} ${DateHelper.monthNameChecker(date.getMonth())} ${date.getFullYear()}
+        ${date.getDate()} ${DateHelper.monthNameChecker(date.getMonth())} ${date.getFullYear()}
         `,
       });
 
