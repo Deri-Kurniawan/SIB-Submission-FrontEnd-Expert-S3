@@ -4,8 +4,8 @@ import DetailHelper from '../../utils/detail-helper';
 const createRestaurantItemTemplate = (restaurant) => `
 <div class="restaurant-item card" tabindex="0">
     <picture class="card-image" tabindex="0">
-      <source media="(max-width: 600px)" srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" type="image/jpeg">
-      <source media="(max-width: 900px)" srcset="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" type="image/jpeg">
+      <source media="(max-width: 600px)" data-srcset="${API_ENDPOINT.IMAGE_SMALL(restaurant.pictureId)}" type="image/jpeg">
+      <source media="(max-width: 900px)" data-srcset="${API_ENDPOINT.IMAGE_MEDIUM(restaurant.pictureId)}" type="image/jpeg">
       <img class="card-image lazyload" data-src="${API_ENDPOINT.IMAGE_LARGE(restaurant.pictureId)}" alt="${restaurant.name} restaurant image.">
     </picture>
     <div class="card-body">
