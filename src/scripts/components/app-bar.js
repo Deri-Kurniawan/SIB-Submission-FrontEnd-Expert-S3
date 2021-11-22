@@ -13,8 +13,8 @@ class AppBar extends HTMLElement {
 
     <nav>
       <ul class="nav-menu">
-        <li class="menu-item"><a href="https://deri-kurniawan.github.io/SIB-Submission-FrontEnd-Expert-S3/#/">Home</a></li>
-        <li class="menu-item"><a href="https://deri-kurniawan.github.io/SIB-Submission-FrontEnd-Expert-S3/#/favorite">Favorite</a></li>
+        <li class="menu-item"><a href="https://deri-kurniawan.github.io/SIB-Submission-FrontEnd-Expert-S3/dist/#/">Home</a></li>
+        <li class="menu-item"><a href="https://deri-kurniawan.github.io/SIB-Submission-FrontEnd-Expert-S3/dist/#/favorite">Favorite</a></li>
         <li class="menu-item">
           <a href="https://github.com/deri-kurniawan" target="_blank" rel="noopener">About Us</a>
         </li>
