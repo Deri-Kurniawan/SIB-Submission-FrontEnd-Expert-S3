@@ -14,7 +14,7 @@ const createRestaurantItemTemplate = (restaurant) => `
             <span aria-label="Location at ${restaurant.city} City."><i class="location-icon fas fa-map-marker-alt fa-fw"></i> ${restaurant.city}</span>
         </div>
         <h3 class="card-title" aria-label="${restaurant.name} Restaurant.">
-          <a class="card-link" href="https://deri-kurniawan.github.io/SIB-Submission-FrontEnd-Expert-S3/dist/#/detail/${restaurant.id}" aria-label="See detail about ${restaurant.name} restaurant." tabindex="0">${restaurant.name}</a>
+          <a class="card-link" href="https://sib-repo.github.io/frontend-expert-s3/dist/#/detail/${restaurant.id}" aria-label="See detail about ${restaurant.name} restaurant." tabindex="0">${restaurant.name}</a>
         </h3>
         <p class="card-description" aria-label="${restaurant.name} restaurant description. ${restaurant.description}">${restaurant.description}</p>
     </div>
